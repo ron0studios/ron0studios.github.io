@@ -1,3 +1,3 @@
-- [Home](/)
+- [home](/)
 - Basic Graph Traversal
-    - [DFS (Depth First Search)](/articles/Depth-First-Search.md)
+    - [DFS](/articles/Depth-First-Search.md)
