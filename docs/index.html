@@ -15,13 +15,6 @@
 
     <!-- TODO: Replace the theme name or leave as is. -->
     <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
-    <style>
-        /* Fix issue on mobile devices where a custom cover image goes off the screen. */
-        section.cover.show {
-            height: 0%;
-        }
-
-    </style>
 
     <!-- Plugins that are needed before app configuration. -->
     <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
@@ -59,7 +52,13 @@
     <!-- Syntax highlighting -->
     <!-- TODO Add prism-bash, prism-python, prism-javascript etc. as separate items to load highlighting for that language -->
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-markdown.min.js"></script>
+        <style>
+        /* Fix issue on mobile devices where a custom cover image goes off the screen. */
+        section.cover.show {
+            height: 0%;
+        }
 
+    </style>
 </body>
 
 </html>
