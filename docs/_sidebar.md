@@ -1,2 +1,2 @@
-* [Home] (/)
-* [DFS] (/#/Articles/Depth-First-Search.md)
+- Basic Graph Traversal
+    - [DFS] (/#/Articles/Depth-First-Search.md)
