@@ -1,2 +1,2 @@
-- [hello]
-    - [hi]
+* [Home] (/)
+* [DFS] (/#/Articles/Depth-First-Search.md)
