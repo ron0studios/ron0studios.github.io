@@ -18,7 +18,7 @@
 
     <!-- Plugins that are needed before app configuration. -->
     <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
-
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
 </head>
 
 <body>
@@ -37,9 +37,14 @@
             plugins: [
             ],
         }
+        import commentBox from 'commentbox.io';
+        // or
+        const commentBox = require('commentbox.io');
+        // or if using the CDN, it will be available as a global "commentBox" variable.
 
+        commentBox('5746274468888576-proj');
     </script>
-    
+    <div class="commentbox"></div>
     <!-- Docsify core -->
     <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 
