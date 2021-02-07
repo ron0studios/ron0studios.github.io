@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://cam.gd" type="Script" id=2]
 [ext_resource path="res://main.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.270588, 0.270588, 0.270588, 0.415686 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="interface" type="Node2D"]
 script = ExtResource( 3 )
@@ -25,11 +32,21 @@ __meta__ = {
 [node name="GUI" type="CanvasLayer" parent="viewpoint"]
 layer = 100
 
+[node name="Panel" type="Panel" parent="viewpoint/GUI"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 336.0
+margin_bottom = 80.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HSlider" type="HSlider" parent="viewpoint/GUI"]
 margin_left = 32.0
-margin_top = 24.0
+margin_top = 40.0
 margin_right = 200.0
-margin_bottom = 64.0
+margin_bottom = 80.0
 min_value = 0.5
 max_value = 10.0
 step = 0.5
@@ -38,7 +55,40 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CheckButton" type="CheckButton" parent="viewpoint/GUI"]
+margin_left = 216.0
+margin_top = 40.0
+margin_right = 292.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="Control" parent="viewpoint/GUI"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="viewpoint/GUI/text"]
+margin_left = 40.0
+margin_top = 32.0
+margin_right = 80.0
+margin_bottom = 46.0
+text = "SPEED"
+
+[node name="Label2" type="Label" parent="viewpoint/GUI/text"]
+margin_left = 208.0
+margin_top = 32.0
+margin_right = 311.0
+margin_bottom = 46.0
+text = "Enable Pure DFS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="nodes" type="Node2D" parent="."]
-[connection signal="gui_input" from="viewpoint/CanvasLayer/ColorRect" to="viewpoint" method="_on_ColorRect_gui_input"]
 [connection signal="gui_input" from="viewpoint/CanvasLayer/ColorRect" to="." method="_on_ColorRect_gui_input"]
+[connection signal="gui_input" from="viewpoint/CanvasLayer/ColorRect" to="viewpoint" method="_on_ColorRect_gui_input"]
 [connection signal="value_changed" from="viewpoint/GUI/HSlider" to="." method="_on_HSlider_value_changed"]

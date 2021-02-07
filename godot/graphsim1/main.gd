@@ -66,7 +66,7 @@ func dfs(start, explored=[]):
 	start.flash()
 	explored.append(start)
 	for i in range(2, len(start.get_children())):
-		if not start.get_children()[i].connect_to in explored:
+		if not start.get_children()[i].connect_to in explored or $viewpoint/GUI/CheckButton.pressed:
 			yield(get_tree().create_timer(1), "timeout")
 			start.get_children()[i].greyout(1,0.5, 0.5)
 			yield(dfs(start.get_children()[i].connect_to, explored),"completed")
