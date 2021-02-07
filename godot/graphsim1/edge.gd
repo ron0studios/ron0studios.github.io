@@ -31,13 +31,18 @@ func _process(delta):
 	if $triangle.modulate.a == 0:
 		$triangle.modulate.a = 1;
 	if not connect_to is Vector2:
-		if connect_to == null or connect_from == null:
-			if connect_to == null: 
-				for i in range(len(connect_from.connections)):
-					if connect_from.connections[i] == null:
+		if not self.is_queued_for_deletion():
+			if connect_to == null or connect_from == null:
+				if connect_to == null: 
+					var toremove=[] #queue deletion
+					for i in range(len(connect_from.connections)):
+						if connect_from.connections[i] == null:
+							toremove.append(i)
+							#connect_from.connections.remove(i)
+					for i in toremove:
 						connect_from.connections.remove(i)
-			self.queue_free()
-			pass
+				self.queue_free()
+				pass
 		if not self.is_queued_for_deletion():
 			points[1] = connect_to.rect_global_position - connect_from.rect_global_position
 			points[1] += Vector2(16,16)
