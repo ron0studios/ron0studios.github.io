@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://cam.gd" type="Script" id=2]
+[ext_resource path="res://main.gd" type="Script" id=3]
+
+[node name="interface" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="viewpoint" type="Camera2D" parent="."]
+position = Vector2( 512, 300 )
+current = true
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="viewpoint"]
+layer = -10
+
+[node name="ColorRect" type="ColorRect" parent="viewpoint/CanvasLayer"]
+margin_right = 1024.0
+margin_bottom = 608.0
+color = Color( 0.807843, 0.807843, 0.807843, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GUI" type="CanvasLayer" parent="viewpoint"]
+layer = 100
+
+[node name="HSlider" type="HSlider" parent="viewpoint/GUI"]
+margin_left = 32.0
+margin_top = 24.0
+margin_right = 200.0
+margin_bottom = 64.0
+min_value = 0.5
+max_value = 10.0
+step = 0.5
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nodes" type="Node2D" parent="."]
+[connection signal="gui_input" from="viewpoint/CanvasLayer/ColorRect" to="viewpoint" method="_on_ColorRect_gui_input"]
+[connection signal="gui_input" from="viewpoint/CanvasLayer/ColorRect" to="." method="_on_ColorRect_gui_input"]
+[connection signal="value_changed" from="viewpoint/GUI/HSlider" to="." method="_on_HSlider_value_changed"]

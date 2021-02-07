@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://edge.gd" type="Script" id=1]
+[ext_resource path="res://triangle.png" type="Texture" id=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+void fragment()
+{
+	COLOR = texture(TEXTURE,UV);
+	//COLOR *= 999.0f;
+	if(COLOR.b > 0.0f)
+	{
+		COLOR.a = 0.0f;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+
+[node name="edge" type="Line2D"]
+z_index = -10
+points = PoolVector2Array( 16, 16, 16, 16 )
+width = 5.0
+default_color = Color( 1, 0, 0, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource( 1 )
+
+[node name="triangle" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+material = SubResource( 2 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
