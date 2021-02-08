@@ -9,6 +9,7 @@ var holding = false
 var holdarrow
 var layers = 2
 var height = 3
+var paused
 
 func shuffled(x):
 	var a = x
@@ -34,19 +35,20 @@ func _ready():
 	#		_addvertice(i*100, j*100)
 	#_addvertice(layers*100, (height*100)/2 -50 )
 	
-	for i in range(10):
-		_addvertice(i*100, (i%3)*100, i+1)
+	#for i in range(10):
+	#	_addvertice(i*100, (i%3)*100, i+1)
 	
 	#the following adds "x" amount of connections
-	var connected = []
-	for i in $nodes.get_children():
-		self.connect("initconnections",i, "init_edges")
-		for j in shuffled($nodes.get_children()):
-			randomize()
-			if j != i and not i in j.connections and len(i.connections) < 1 and not j in connected: # x is the "< 2" part
-				connected.append(j)
-				i.connections.append(j)
-	emit_signal("initconnections")
+#	var connected = []
+#	for i in $nodes.get_children():
+#		self.connect("initconnections",i, "init_edges")
+#		for j in shuffled($nodes.get_children()):
+#			randomize()
+#			if j != i and not i in j.connections and len(i.connections) < 1 and not j in connected: # x is the "< 2" part
+#				connected.append(j)
+#				i.connections.append(j)
+#				j.connections_from.append(i)
+#	emit_signal("initconnections")
 	#calculate($nodes.get_child(0)) # 0 for now
 
 	pass # Replace with function body.

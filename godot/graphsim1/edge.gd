@@ -26,22 +26,18 @@ func flash():
 	#$Tween.interpolate_method(self, "_movepoints", 0, 1, 1,Tween.TRANS_LINEAR,Tween.EASE_IN)
 	#$Tween.start()
 
+func setpause(pause):
+	set_process(!pause)
+	set_process_input(!pause)
+	set_process_internal(!pause)
+	set_process_unhandled_input(!pause)
+	set_process_unhandled_key_input(!pause)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if $triangle.modulate.a == 0:
 		$triangle.modulate.a = 1;
 	if not connect_to is Vector2:
-		if connect_to == null or connect_from == null:
-			if connect_to == null: 
-				var toremove=[] #queue deletion
-				for i in range(len(connect_from.connections)):
-					if connect_from.connections[i] == null:
-						toremove.append(i)
-						#connect_from.connections.remove(i)
-				for i in toremove:
-					connect_from.connections.remove(i)
-			self.queue_free()
-			pass
 		if not self.is_queued_for_deletion():
 			points[1] = connect_to.rect_global_position - connect_from.rect_global_position
 			points[1] += Vector2(16,16)
