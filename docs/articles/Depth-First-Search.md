@@ -59,15 +59,15 @@ Here is a simulation, *written in [Godot](godotengine.org)*, that goes through t
 - Move around by dragging your mouse
 - Double click to create a node, or destroy one. 
 - Right click on a node to create an edge from it, right click on another node afterwards. (**Do not do this whilst the simulation is running!**)
+- press escape while holding an edge to cancel that action
 - change the speed of the simulation with the slider
 - switch between pure and regular DFS with the switch button (**Do not do this whilst the simulation is running!**)
 - **If the program crashes, please report it!!!** 
 
-<iframe frameborder="0" src="https://itch.io/embed-upload/3327294?color=333333" allowfullscreen="" width="1024" height="620"><a href="https://ron0studios.itch.io/simple-graph-simulation">Play simple-graph-simulation on itch.io</a></iframe>
+<iframe src="https://itch.io/embed-upload/3331934?color=333333" allowfullscreen="" width="1024" height="600" frameborder="0"><a href="https://ron0studios.itch.io/simple-graph-simulation">Play simple-graph-simulation on itch.io</a></iframe>
 
 **CURRENTLY KNOWN ERRORS**
 
-- when deleting a node that has an edge leading to it, and using opera *(on linux, not tested on windows)*, the game will crash. 
 - adding an edge while the algorithm is running will lead to a crash, when it meets that edge.
 
 **if you have a solution to any of these please propose on the github!**
