@@ -66,7 +66,7 @@ Here is a simulation, *written in [Godot](godotengine.org)*, that goes through t
 - switch between pure and regular DFS with the switch button (**Do not do this whilst the simulation is running!**)
 - **If the program crashes, please report it!!!** 
 
-<iframe src="https://itch.io/embed-upload/3332206?color=333333" allowfullscreen="" width="1024" height="600" frameborder="0"><a href="https://ron0studios.itch.io/simple-graph-simulation">Play simple-graph-simulation on itch.io</a></iframe>
+<iframe src="https://itch.io/embed-upload/3332544?color=333333" allowfullscreen="" width="1024" height="620" frameborder="0"><a href="https://ron0studios.itch.io/simple-graph-simulation">Play simple-graph-simulation on itch.io</a></iframe>
 
 **CURRENTLY KNOWN ERRORS**
 
