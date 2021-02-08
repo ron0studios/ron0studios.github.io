@@ -6,7 +6,7 @@
 >
 > Navigate around the sidebar and take a look around!
 
-{TODO} --Add Image here--
+{TODO} --Add Image here-- 
 
 
 

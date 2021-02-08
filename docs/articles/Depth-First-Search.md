@@ -1,4 +1,4 @@
-# DFS
+# **DFS**
 
 ## Overview
 
@@ -14,7 +14,8 @@ As mentioned earlier, Depth First Search is a backtracking algorithm. We begin w
 
 Here is some C++ pseudocode to help demonstrate:
 
-```c++
+```clike
+//C++ pseudo-demonstration
 void DFS(Node node) //the node class simply contains an array of all its neighbours and its data value (an integer)
 {
     for(auto i : node.neighbours)
@@ -36,7 +37,8 @@ The method above is a **pure implementation of DFS**. In reality, this version o
 
 A better solution is to have a **visited** list that we can use to check if a certain node can be visited or not, and only traverse to nodes that have not been visited. We can either use a *basic array* in which all the elements are nodes that **have been visited** thus far, or a hash map of all the values with the node as the key, and a *boolean* as for the value. Both methods are viable, however a hash map would give us much better performance with a time complexity of **O(1)** whilst the array based method requires searching and can only yield us a time complexity of **O(N)**, where *N* is the length of the array.
 
-```cpp
+```clike
+//C++ pseudo-demonstration
 void DFS(Node node, unordered_map<Node,bool> visited)
 {
     visited[node] = true;
@@ -64,7 +66,7 @@ Here is a simulation, *written in [Godot](godotengine.org)*, that goes through t
 - switch between pure and regular DFS with the switch button (**Do not do this whilst the simulation is running!**)
 - **If the program crashes, please report it!!!** 
 
-<iframe src="https://itch.io/embed-upload/3331934?color=333333" allowfullscreen="" width="1024" height="600" frameborder="0"><a href="https://ron0studios.itch.io/simple-graph-simulation">Play simple-graph-simulation on itch.io</a></iframe>
+<iframe src="https://itch.io/embed-upload/3332206?color=333333" allowfullscreen="" width="1024" height="600" frameborder="0"><a href="https://ron0studios.itch.io/simple-graph-simulation">Play simple-graph-simulation on itch.io</a></iframe>
 
 **CURRENTLY KNOWN ERRORS**
 

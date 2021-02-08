@@ -28,13 +28,7 @@ func _gentree(length):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	#neural network style
-	#_addvertice(-100,(height*100)/2 -50)
-	#for i in range(layers):
-	#	for j in range(height):
-	#		_addvertice(i*100, j*100)
-	#_addvertice(layers*100, (height*100)/2 -50 )
-	
+
 	#for i in range(10):
 	#	_addvertice(i*100, (i%3)*100, i+1)
 	
@@ -50,7 +44,20 @@ func _ready():
 #				j.connections_from.append(i)
 #	emit_signal("initconnections")
 	#calculate($nodes.get_child(0)) # 0 for now
-
+		#_addvertice(-100,(height*100)/2 -50)
+	for i in range(int(rand_range(3,10))):
+		_addvertice(rand_range(50,550), rand_range(50,550), i+1)
+	for i in $nodes.get_children():
+		for j in shuffled($nodes.get_children()):
+			randomize()
+			if j != i and not i in j.connections and len(i.connections) < 1:
+				var edge = load("res://edge.tscn").instance()
+				edge.connect_from = i
+				edge.connect_to = j
+				i.add_child(edge)
+				i.connections.append(edge)
+				j.connections_from.append(edge)
+				
 	pass # Replace with function body.
 
 func _input(event):
