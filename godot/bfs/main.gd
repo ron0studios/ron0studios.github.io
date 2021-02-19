@@ -87,7 +87,7 @@ func dfs(start, explored=[]):
 
 func bfs(start, queue=[], visited=[]):
 	queue.append(start)
-
+	visited.append(start)
 	while len(queue) > 0:
 		yield(get_tree().create_timer(1), "timeout")
 		var pop = queue.pop_front()
@@ -95,7 +95,7 @@ func bfs(start, queue=[], visited=[]):
 		for i in range(2,len(pop.get_children())):
 			yield(get_tree().create_timer(0.5), "timeout")
 			if not pop.get_children()[i].connect_to in visited:
-				pop.get_children()[i].connect_to.flash(100,0.0,0.0)
+				pop.get_children()[i].connect_to.flash(5,0.0,0.0)
 				queue.append(pop.get_children()[i].connect_to)
 				visited.append(pop.get_children()[i].connect_to)
 	yield(get_tree().create_timer(5), "timeout")
