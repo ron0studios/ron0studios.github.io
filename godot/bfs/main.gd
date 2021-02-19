@@ -92,7 +92,6 @@ func bfs(start, queue=[], visited=[]):
 		yield(get_tree().create_timer(1), "timeout")
 		var pop = queue.pop_front()
 		pop.flash()
-		print(pop)
 		for i in range(2,len(pop.get_children())):
 			yield(get_tree().create_timer(0.5), "timeout")
 			if not pop.get_children()[i].connect_to in visited:

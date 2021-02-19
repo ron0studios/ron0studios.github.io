@@ -50,7 +50,7 @@ void DFS(Node node, unordered_map<Node,bool> visited)
 }
 ```
 
- 
+------
 
 ## Time Complexity
 
@@ -68,7 +68,7 @@ since each edge only gets visited once throughout the algorithm! A graph, by def
 
 > **O( All vertices + All edges )** or **O(V+E)**
 
-
+------
 
 ## The Simulation
 
