@@ -86,6 +86,6 @@ Here is a simulation, *written in [Godot](godotengine.org)*, that goes through t
 
 **CURRENTLY KNOWN ERRORS**
 
-- adding an edge while the algorithm is running will lead to a crash, when it meets that edge.
+- adding an edge while the algorithm is running will lead to a crash, when it meets that edge. Will not be fixed by me, but if anyone pull-requests the solution, I shall happily oblige.
 
 **if you have a solution to any of these please propose on the github!**
