@@ -52,6 +52,22 @@ void DFS(Node node, unordered_map<Node,bool> visited)
 
  
 
+## Time Complexity
+
+> DFS has a time complexity of **O(V+E)**, where **V** is the number of *nodes (vertices)*, and **E** is the number of *connections (edges)*. Here is an explanation on how this works:
+
+In a worst case scenario, we would have a **"complete graph"**, one in which every node is connected to every other node. Sort of like a pentagram! Each node goes through each of its neighbours through the edges. This can be shortened to:
+
+> **O( V<sub>0</sub> + All of V<sub>0</sub>'s edges + V<sub>1</sub> + All of V<sub>1</sub>'s edged [...] )**
+
+which can be simplified to:
+
+> **O( (V<sub>0</sub> + V<sub>1</sub> + [...] ) + ( E<sub>0</sub> + E<sub>1</sub> + [...]) )**
+
+since each edge only gets visited once throughout the algorithm! A graph, by definition, is a pairwise data structure, so two nodes can't have the same edge going off of it. We can finally simplify this to:
+
+> **O( All of V + All of E )** or **O( V + E ) **
+
 
 
 ## The Simulation
