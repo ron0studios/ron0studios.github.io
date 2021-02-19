@@ -66,7 +66,7 @@ which can be simplified to:
 
 since each edge only gets visited once throughout the algorithm! A graph, by definition, is a pairwise data structure, so two nodes can't have the same edge going off of it. We can finally simplify this to:
 
-> **O( All of V + All of E )** or **O( V + E )**
+> **O( All vertices + All edges )** or **O(V+E)**
 
 
 
