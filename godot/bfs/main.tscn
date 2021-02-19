@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://cam.gd" type="Script" id=2]
+[ext_resource path="res://main.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.270588, 0.270588, 0.270588, 0.415686 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="interface" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="viewpoint" type="Camera2D" parent="."]
+position = Vector2( 512, 300 )
+current = true
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="viewpoint"]
+layer = -10
+
+[node name="ColorRect" type="ColorRect" parent="viewpoint/CanvasLayer"]
+margin_right = 1024.0
+margin_bottom = 608.0
+color = Color( 0.807843, 0.807843, 0.807843, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GUI" type="CanvasLayer" parent="viewpoint"]
+layer = 100
+
+[node name="Panel" type="Panel" parent="viewpoint/GUI"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 224.0
+margin_bottom = 80.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="viewpoint/GUI"]
+margin_left = 32.0
+margin_top = 40.0
+margin_right = 200.0
+margin_bottom = 80.0
+min_value = 0.5
+max_value = 10.0
+step = 0.5
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="Control" parent="viewpoint/GUI"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="viewpoint/GUI/text"]
+margin_left = 40.0
+margin_top = 32.0
+margin_right = 80.0
+margin_bottom = 46.0
+text = "SPEED"
+
+[node name="nodes" type="Node2D" parent="."]
+[connection signal="gui_input" from="viewpoint/CanvasLayer/ColorRect" to="." method="_on_ColorRect_gui_input"]
+[connection signal="gui_input" from="viewpoint/CanvasLayer/ColorRect" to="viewpoint" method="_on_ColorRect_gui_input"]
+[connection signal="value_changed" from="viewpoint/GUI/HSlider" to="." method="_on_HSlider_value_changed"]
