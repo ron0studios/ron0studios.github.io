@@ -68,7 +68,13 @@ since each edge only gets visited once throughout the algorithm! A graph, by def
 
 > **O( All vertices + All edges )** or **O(V+E)**
 
-------
+---
+
+## Video Tutorial
+
+<iframe width="1024" height="600" src="https://www.youtube.com/embed/QCrKPJqQ3HM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
 
 ## The Simulation
 
@@ -78,6 +84,7 @@ Here is a simulation, *written in [Godot](godotengine.org)*, that goes through t
 - Double click to create a node, or destroy one. 
 - Right click on a node to create an edge from it, right click on another node afterwards. (**Do not do this whilst the simulation is running!**)
 - press escape while holding an edge to cancel that action
+- *middle click on a node to start the simulation!*
 - change the speed of the simulation with the slider
 - switch between pure and regular DFS with the switch button (**Do not do this whilst the simulation is running!**)
 - **If the program crashes, please report it!!!** 
