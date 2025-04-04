@@ -47,3 +47,7 @@ showPostsSummary = true
     url = "/notes"
     weight = 5
 
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
