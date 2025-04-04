@@ -1,0 +1,2 @@
+# queue
+a queue is a simple data structure that uses a FIFO system (first in first out). This means that any data pushed into the queue is left in the back of the array, whilst the only way to remove objects from the queue is through the front, meaning the first element of the array. This can be especially useful in algorithms such as [[BFS]], where the use of a queue can help form a tree of distances from the start node.
