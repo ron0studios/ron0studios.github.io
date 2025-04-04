@@ -1,0 +1,49 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Rudrrayan Manna'
+theme = 'not-much'
+
+[params]
+theme = "dark"
+palette = "theme"
+showThemeNotice = true
+showPostsSummary = true
+
+# Navigation
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "home"
+    title = "Home"
+    url = "/"
+    weight = 1
+  
+  [[menu.main]]
+    identifier = "about"
+    name = "about"
+    title = "About"
+    url = "/about"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "posts"
+    name = "posts"
+    title = "posts"
+    url = "/posts"
+    weight = 3
+  
+  
+  [[menu.main]]
+    identifier = "github"
+    name = "github"
+    title = "GitHub"
+    url = "https://github.com/imgios/not-much"
+    weight = 4
+
+  [[menu.main]]
+    identifier = "notes"
+    name = "notes"
+    title = "Knowledge Base"
+    url = "/notes"
+    weight = 5
+
