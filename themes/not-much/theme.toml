@@ -1,0 +1,16 @@
+name = 'not-much'
+license = 'MIT'
+licenselink = 'https://github.com/imgios/not-much/blob/main/LICENSE'
+description = 'A minimal blog theme for Hugo'
+
+homepage = 'https://github.com/imgios/not-much'
+
+demosite = 'https://giosuesulipano.it/not-much/'
+
+tags = ['blog', 'website', 'simple', 'dark', 'minimal', 'responsive']
+
+features = ['blog', 'reponsive', 'theme-palettes']
+
+[author]
+  name = 'Giosuè Sulipano'
+  homepage = 'https://giosuesulipano.it'

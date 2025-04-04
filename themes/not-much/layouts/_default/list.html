@@ -1,0 +1,40 @@
+{{ define "main" }}
+  <div class="container pt-5">
+    <!-- <h1>{{ .Title }}</h1> -->
+    <div class="row mt-5 pt-5">
+      {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+    </div>
+    {{ .Content }}
+    {{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
+    {{ range $paginator.Pages }}
+    <div class="row mb-3">
+      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+      {{ $dateHuman := .Date | time.Format ":date_long" }}
+      <time class="small" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+      <h2 class="h5"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+      {{ if .Site.Params.showPostsSummary }}
+      <p class="small opacity-75 post-summary">
+        {{ .Summary }}
+      </p>
+      {{ end }}
+    </div>
+    {{ end }}
+    {{ $paginator := .Paginator }}
+    {{ if gt $paginator.TotalPages 1 }}
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        {{ if $paginator.HasPrev }}
+        <li class="breadcrumb-item">
+          <a href="{{ $paginator.Prev.URL }}">← back</a>
+        </li>
+        {{ end }}
+        {{ if $paginator.HasNext }}
+        <li class="breadcrumb-item">
+          <a href="{{ $paginator.Next.URL }}">next →</a>
+        </li>
+        {{ end }}
+      </ol>
+    </nav>
+    {{ end }}
+  </div>
+{{ end }}

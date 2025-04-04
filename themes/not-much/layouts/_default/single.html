@@ -1,0 +1,50 @@
+{{ define "main" }}
+  <div class="container pt-5">
+    <div class="row mt-5 pt-5">
+      {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+    </div>
+    {{ if .Params.toc }}
+    <div class="d-none d-lg-block position-fixed end-0 small toc">
+      <p class="toc-title">
+        Table of Contents:
+      </p>
+      {{ .TableOfContents }}
+    </div>
+    {{ end }}
+    <div class="post">
+      <header class="mb-4">
+        <h1 class="text-uppercase">{{ .Title }}</h1>
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{ $dateHuman := .Date | time.Format ":date_long" }}
+        <div aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item small">
+              {{ if .Draft }}
+              <span class="draft-label">DRAFT</span> &#183;
+              {{ end }}
+              <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+            </li>
+            {{ $lastModMachine := .Lastmod | time.Format "2006-01-02T15:04:05-07:00" }}
+            {{ if and (isset .Params "lastmod") (ne $lastModMachine $dateMachine) }}
+            {{ $lastModHuman := .Lastmod | time.Format ":date_long" }}
+            <li class="breadcrumb-item small">
+              Updated: <time datetime="{{ $lastModMachine }}">{{ $lastModHuman }}</time>
+            </li>
+            {{ end }}
+            <li class="breadcrumb-item small">
+              {{ printf "%d minutes" .ReadingTime }}
+            </li>
+          </ol>
+        </div>
+      </header>
+      <article>
+        {{ .Content }}
+      </article>
+      {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+      {{ partial "post-pagination.html" . }}
+    </div>
+  </div>
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+{{ end }}
