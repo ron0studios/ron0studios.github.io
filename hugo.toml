@@ -1,12 +1,13 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Rudrrayan Manna'
-theme = 'not-much'
+theme = ["hugo-admonitions",'not-much']
+copyright = "Rudrrayan Manna"
 
 [params]
 theme = "dark"
 palette = "theme"
-showThemeNotice = true
+showThemeNotice = false
 showPostsSummary = true
 
 # Navigation
@@ -46,6 +47,7 @@ showPostsSummary = true
     title = "Knowledge Base"
     url = "/notes"
     weight = 5
+
 
 
 [caches]

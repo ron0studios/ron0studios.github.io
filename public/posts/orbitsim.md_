@@ -1,0 +1,23 @@
+---
+title: "OrbitSim"
+lead: "Orbit simulations using Barnes-Hut"
+date: 2024-03-01
+slug: "orbitsim"
+description: "My "
+keywords: ["simulation", "physics", "orbit", "barnes-hut"]
+draft: false
+tags: ["c++", "scientific", "project"]
+math: true
+toc: true
+summary: My implementation of the Barnes-Hut treecode algorithm for N-body gravity simulations. Capable of hosting up to 100k bodies on low end devices.
+---
+
+# Intro
+
+# N-Body Simulations
+
+# Barnes-Hut treeocde algorithm
+
+# Tuning + Optimisation
+
+# Showcase
