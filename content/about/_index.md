@@ -67,9 +67,9 @@ In terms of Software and Software development, I have always been fond of C++ an
 
 ## Find out more...
 
-[Github (for projects)](https://github.com/ron0studios)
-[Linkedin (for the connections)](https://www.linkedin.com/in/rudrrayan/)
-[Itch.io (for gamejam projects)](https://ron0studios.itch.io/)
+- [Github (for projects)](https://github.com/ron0studios)
+- [Linkedin (for the connections)](https://www.linkedin.com/in/rudrrayan/)
+- [Itch.io (for gamejam projects)](https://ron0studios.itch.io/)
 
 ## Contact
 
