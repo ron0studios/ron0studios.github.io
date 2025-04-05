@@ -18,5 +18,3 @@ I find writing and explaining things to be very useful, it helps uncloud your mi
 
 
 Thank you to [Giosuè Sulipano](https://giosuesulipano.it/) for the `not-much` theme which I am currently using for this project!
-
-Also thanks to bravenet for keeping a tally of visitors! 
