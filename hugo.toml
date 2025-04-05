@@ -42,11 +42,18 @@ showPostsSummary = true
     weight = 4
 
   [[menu.main]]
+    identifier = "linkedin"
+    name = "linkedin"
+    title = "linkedin"
+    url = "https://www.linkedin.com/in/rudrrayan/"
+    weight = 5
+
+  [[menu.main]]
     identifier = "notes"
     name = "notes"
     title = "Knowledge Base"
     url = "/notes"
-    weight = 5
+    weight = 6
 
 
 
