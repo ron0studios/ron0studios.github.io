@@ -47,7 +47,7 @@ In the last couple years I have worked on ...
 
 > - Hackathons 
 >     - game jams (GJ): [Benbonk GJ, GMTK GJ (x3), Miz jam](https://ron0studios.itch.io/) and Global Game Jam
->     - hackathons: HackStart, HackSussex, HackUPC AISoc x IET, SotonHack
+>     - hackathons: HackStart, HackSussex, HackUPC, AISoc x IET, SotonHack
 >     - Built web3 apps, web scraping/verification tools, agents, CV models etc. etc.
 
 > - high performance computing (HPC) 

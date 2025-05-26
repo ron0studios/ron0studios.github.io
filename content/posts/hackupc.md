@@ -1,7 +1,7 @@
 ---
 title: "HackUPC 2025: Referlut"
 lead: "Referral deal finding made easy"
-date: 2025-02-23
+date: 2025-05-20
 slug: "hackupc-2025-referlut"
 description: "The Revolut prize winning project for HackUPC this year, in detail..."
 keywords: ["hackathon", "referlut", "revolut", "LLM"]
@@ -9,7 +9,7 @@ draft: false
 tags: ["hackathon", "project"]
 math: true
 toc: true
-summary: My time at HackSussex, and the project we made targetting misinformation from BlueSky in real time!
+summary: My time at HackUPC, one of Europe's largest hackathons, and my first tech event abroad! 
 ---
 
 > [!EXPERIMENT] THIS IS A DRAFT!
