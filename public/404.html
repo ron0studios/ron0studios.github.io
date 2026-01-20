@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="/css/main.css">
   
-      <link rel="stylesheet" href="/css/palette/eink.css">
+      <link rel="stylesheet" href="/css/palette/infeinermium.css">
 
       <script src="/js/main.js"></script>
 
@@ -47,15 +47,41 @@
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script>
-    function detectThemePreferences() {
-      let themeClasses = ["text-dark"];
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          themeClasses = ["text-light", "dark"];
-      }
-      document.body.classList.add(...themeClasses);
+    function getSystemTheme() {
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
 
-    detectThemePreferences();
+    function applyTheme(theme) {
+      document.body.classList.remove('dark', 'text-dark', 'text-light');
+      if (theme === 'dark') {
+        document.body.classList.add('dark', 'text-light');
+      } else {
+        document.body.classList.add('text-dark');
+      }
+      updateThemeIcon(theme);
+    }
+
+    function updateThemeIcon(theme) {
+      const label = document.getElementById('theme-label');
+      if (label) {
+        label.textContent = theme === 'dark' ? 'dark mode' : 'light mode';
+      }
+    }
+
+    function toggleTheme() {
+      const currentTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', newTheme);
+      applyTheme(newTheme);
+    }
+
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      const theme = savedTheme || getSystemTheme();
+      applyTheme(theme);
+    }
+
+    initTheme();
   </script>
 </body>
 </html>

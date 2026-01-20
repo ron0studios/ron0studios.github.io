@@ -1,3 +1,4 @@
+/*
 :root {
     --bg-color: #F8F8F2;
     --bg-variant: #e2e2da;
@@ -17,26 +18,46 @@
     --font-color: #f3f3f3;
     --selection-color: black;
 }
+*/
+
+.dark {
+    --bg-color: #291e2e;
+    --bg-variant: #221825;
+    --primary: #a6f7b8;
+    --primary-variant: #bdf5c4;
+    --secondary: #fa89e7;
+    --font-color: #f3f3f3;
+    --selection-color: black;
+}
 
 :root {
-  /* --- Primary: Purple --- */
+    --bg-color: #fdfefa;
+    --bg-variant: #221825;
+    --primary: #3C5100;
+    --primary-variant: #3C5100;
+    --secondary: #704C8F;
+    --font-color: #210439;
+    --selection-color: #DDF2A1;
+}
+
+/*
+:root {
   --color-primary-lightest: #9376AC;
   --color-primary-light:    #704C8F;
-  --color-primary-base:     #522B72; /* Main Brand Color */
+  --color-primary-base:     #522B72; 
   --color-primary-dark:     #371356;
   --color-primary-darkest:  #210439;
 
-  /* --- Secondary 1: Green --- */
   --color-secondary-lightest: #DDF2A1;
   --color-secondary-light:    #B0CA65;
   --color-secondary-base:     #86A136;
   --color-secondary-dark:     #5F7914;
   --color-secondary-darkest:  #3C5100;
 
-  /* --- Secondary 2: Gold --- */
   --color-accent-lightest: #FFEDAA;
   --color-accent-light:    #D4BE6A;
   --color-accent-base:     #AA9239;
   --color-accent-dark:     #806915;
   --color-accent-darkest:  #554300;
 }
+*/

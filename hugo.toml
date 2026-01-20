@@ -15,7 +15,7 @@ copyright = "Sample custom notice © {year}"
 
 [markup]
   [markup.highlight]
-    style = 'dracula'
+    style = 'infeinermium'
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
@@ -23,7 +23,7 @@ copyright = "Sample custom notice © {year}"
 
 [params]
 theme = "auto"
-palette = "eink"
+palette = "infeinermium"
 showThemeNotice = true
 showPostsSummary = true
 
