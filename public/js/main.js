@@ -1,4 +1,0 @@
-(() => {
-  // <stdin>
-  console.log("test");
-})();
