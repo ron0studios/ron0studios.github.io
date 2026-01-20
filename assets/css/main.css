@@ -83,6 +83,10 @@ ul > li:has(input[type=checkbox]) {
   list-style-type: none;
 }
 
+strong, b {
+  color: var(--primary-variant);
+}
+
 code {
   font-family: 'Red Hat Mono', serif !important;
 }
