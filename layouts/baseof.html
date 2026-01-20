@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.LanguageCode site.Language.Lang }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+{{ $theme := "dark" }}
+{{- with .Site.Params.theme }}
+  {{ $theme = . }}
+{{- end }}
+<body
+  {{- if eq $theme "dark" }}
+    class="dark"
+  {{- end }}
+>
+  <!-- <header>
+    {{ partial "header.html" . }}
+  </header> -->
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  {{ if .Param "math" }}
+    {{ partial "math.html" . }}
+  {{ end }}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  {{- if eq $theme "auto" }}
+  <script>
+    function detectThemePreferences() {
+      let themeClasses = ["text-dark"];
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          themeClasses = ["text-light", "dark"];
+      }
+      document.body.classList.add(...themeClasses);
+    }
+
+    detectThemePreferences();
+  </script>
+  {{- end }}
+</body>
+</html>

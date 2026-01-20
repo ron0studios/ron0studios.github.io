@@ -1,0 +1,42 @@
+:root {
+    --bg-color: #F8F8F2;
+    --bg-variant: #e2e2da;
+    --primary: #FF5555;
+    --primary-variant: #ff1717;
+    --secondary: #6272A4;
+    --font-color: #212529;
+    --selection-color: black;
+}
+
+.dark {
+    --bg-color: #282A36;
+    --bg-variant: #44475A;
+    --primary: #FFB86C;
+    --primary-variant: #F1FA8C;
+    --secondary: #50FA7B;
+    --font-color: #f3f3f3;
+    --selection-color: black;
+}
+
+:root {
+  /* --- Primary: Purple --- */
+  --color-primary-lightest: #9376AC;
+  --color-primary-light:    #704C8F;
+  --color-primary-base:     #522B72; /* Main Brand Color */
+  --color-primary-dark:     #371356;
+  --color-primary-darkest:  #210439;
+
+  /* --- Secondary 1: Green --- */
+  --color-secondary-lightest: #DDF2A1;
+  --color-secondary-light:    #B0CA65;
+  --color-secondary-base:     #86A136;
+  --color-secondary-dark:     #5F7914;
+  --color-secondary-darkest:  #3C5100;
+
+  /* --- Secondary 2: Gold --- */
+  --color-accent-lightest: #FFEDAA;
+  --color-accent-light:    #D4BE6A;
+  --color-accent-base:     #AA9239;
+  --color-accent-dark:     #806915;
+  --color-accent-darkest:  #554300;
+}

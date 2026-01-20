@@ -1,0 +1,29 @@
+{{ define "main" }}
+    <div class="container pt-5">
+      <div class="row mt-5 pt-5">
+        {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+      </div>
+      <h1 class="h5 mb-3">content linked to <span class="text-lowercase underline">{{ .Title }}</span></h1>
+      {{ .Content }}
+      {{ range .Pages }}
+      <div class="row mb-3">
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{ $dateHuman := .Date | time.Format ":date_long" }}
+        <time class="small" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+        <h2 class="h5"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+        {{ if .Site.Params.showPostsSummary }}
+        <p class="small opacity-75 post-summary">
+          {{ .Summary }}
+        </p>
+        {{ end }}
+
+        {{ range .Data.Pages }}
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{ $dateHuman := .Date | time.Format ":date_long" }}
+        <time class="small" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+        <h2 class="h5"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+{{ end }}
