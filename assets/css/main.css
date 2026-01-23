@@ -158,7 +158,7 @@ kbd {
   color: var(--secondary);
 }
 
-.post article a:not(.footnote-backref)::after, footer a::after {
+.post article a:not(.footnote-backref, .footnote-ref)::after, footer a::after {
   content: " ↗"
 }
 
@@ -393,4 +393,41 @@ hr {
 
 .theme-toggler:hover {
   text-decoration: underline;
+}
+
+.video-container {
+  border: dashed 3px color-mix(in srgb, var(--secondary) 50%, transparent);
+  padding: 1rem;
+}
+
+.video-container video {
+  display: block;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.video-container figure {
+  margin: 0;
+}
+
+.video-container figcaption {
+  margin: 0.5rem 0 0 0;
+}
+
+.svg-container {
+  border: dashed 3px color-mix(in srgb, var(--secondary) 50%, transparent);
+  padding: 1rem;
+}
+
+.svg-container img {
+  display: block;
+  width: 100%;
+}
+
+.svg-container figure {
+  margin: 0;
+}
+
+.svg-container figcaption {
+  margin: 0.5rem 0 0 0;
 }
