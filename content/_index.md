@@ -91,12 +91,29 @@ I am currently delving deeper into `HPC`, learning about more niche topics in __
       </div>
       <div class="timeline-item">
         <span class="timeline-icons">
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7333951866126430213" class="icon-linkedin" title="LinkedIn"></a>
+        </span>
+        <span class="timeline-date">Jun | Event</span>
+        <span class="timeline-title">YC AI Startup School</span>
+        <span class="timeline-desc">Flown to SF! Met cool people</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-icons">
             <a href="https://www.linkedin.com/feed/update/urn:li:activity:7325258794744143872/" class="icon-linkedin" title="LinkedIn"></a>
             <a href="https://github.com/ron0studios/Referlut" class="icon-github" title="Github"></a>
         </span>
         <span class="timeline-date">Apr | Hackathon</span>
         <span class="timeline-title">HackUPC</span>
         <span class="timeline-desc" style="color:gold;font-weight:bold;">Revolut track winner</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-icons">
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7321292202234580994" class="icon-linkedin" title="LinkedIn"></a>
+            <a href="https://github.com/Eric-xin/run_time_terror_C1Terminal" class="icon-github" title="Github"></a>
+        </span>
+        <span class="timeline-date">Mar | Competition</span>
+        <span class="timeline-title">Citadel Terminal</span>
+        <span class="timeline-desc"><span style="color:gold; font-weight:600;">European top 10</span></span>
       </div>
       <div class="timeline-item">
         <span class="timeline-icons">
@@ -122,7 +139,7 @@ I am currently delving deeper into `HPC`, learning about more niche topics in __
     <aside>2024</aside>
     <div class="timeline-grid">
       <div class="timeline-item">
-        <span class="timeline-icons"><a href="https://web.archive.org/web/20230315224026/https://thebusinessmagazine.co.uk/esg/southampton-uni-codebreakig-challenge-winners-announced/" class="icon-internet" title="Link"></a><a href="https://github.com/ron0studios/decipherati-tools" class="icon-github" title="Github"></a></span>
+        <span class="timeline-icons"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7300283959374954496" class="icon-linkedin" title="LinkedIn"></a><a href="https://github.com/ron0studios/decipherati-tools" class="icon-github" title="Github"></a></span>
         <span class="timeline-date">Hackathon</span>
         <span class="timeline-title">HackSussex</span>
         <span class="timeline-desc"><span style="color:gold;font-weight:600">CASM track winner</span></span>
@@ -132,6 +149,12 @@ I am currently delving deeper into `HPC`, learning about more niche topics in __
         <span class="timeline-date">Competition</span>
         <span class="timeline-title">Huawei Tech Arena UK</span>
         <span class="timeline-desc">Branch Prediction</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-icons"><a href="https://github.com/ron0studios/TechArena2024" class="icon-github" title="Github"></a></span>
+        <span class="timeline-date">Oct | Hackathon</span>
+        <span class="timeline-title">Southampton HackStart</span>
+        <span class="timeline-desc">Overall 3rd</span>
       </div>
     </div>
   </div>
