@@ -1,0 +1,40 @@
+{{- $source := $.Get "src" -}}
+{{- if not $source -}}
+  {{- errorf "Image 'src' must be supplied" -}}
+{{- end -}}
+{{- $img := or ($.Page.Resources.GetMatch $source) (resources.GetMatch $source) -}}
+{{- $caption := $.Get "caption" -}}
+{{- $alt := $.Get "alt" | default "" -}}
+{{- $width := $.Get "width" | default "100%" -}}
+{{- $anchor := $.Get "anchor" | default "center" -}}
+{{- $wrap := $.Get "wrap" | default "false" -}}
+
+{{- $style := printf "width: %s;" $width -}}
+{{- if eq $wrap "true" -}}
+  {{- if eq $anchor "left" -}}
+    {{- $style = printf "%s float: left; margin: 0 1rem 0.7rem 0;" $style -}}
+  {{- else if eq $anchor "right" -}}
+    {{- $style = printf "%s float: right; margin: 0 0 0.7rem 1rem;" $style -}}
+  {{- else -}}
+    {{- $style = printf "%s margin: 0 auto;" $style -}}
+  {{- end -}}
+{{- else -}}
+  {{- if eq $anchor "left" -}}
+    {{- $style = printf "%s margin-right: auto;" $style -}}
+  {{- else if eq $anchor "right" -}}
+    {{- $style = printf "%s margin-left: auto;" $style -}}
+  {{- else -}}
+    {{- $style = printf "%s margin: 0 auto;" $style -}}
+  {{- end -}}
+{{- end -}}
+
+{{ printf `<div class="img-container" style="%s">` $style | safeHTML }}
+{{- if $caption -}}
+<figure>
+{{- end -}}
+  <img src="{{ with $img }}{{ .RelPermalink }}{{ else }}{{ $source }}{{ end }}" alt="{{ $alt }}">
+{{- with $caption -}}
+  <figcaption>{{ . | markdownify }}</figcaption>
+</figure>
+{{- end -}}
+</div>

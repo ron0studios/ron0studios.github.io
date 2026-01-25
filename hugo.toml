@@ -11,7 +11,7 @@
 title = "Rudrrayan Manna"
 languageCode = "en-us"
 baseURL = "https://www.ron0.dev/"
-copyright = "Ron0Studios © {year}"
+copyright = "from Ron0Studios"
 
 [markup]
   [markup.highlight]
@@ -30,7 +30,7 @@ copyright = "Ron0Studios © {year}"
 [params]
 theme = "auto"
 palette = "infeinermium"
-showThemeNotice = true
+showThemeNotice = false
 showPostsSummary = true
 
 # Giscus Comment System
