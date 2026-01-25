@@ -1,0 +1,5 @@
+{{- $gap := $.Get "gap" | default "1rem" -}}
+
+<div class="shortcode-grid" style="gap: {{ $gap }};">
+{{ .Inner }}
+</div>

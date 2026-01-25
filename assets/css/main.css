@@ -290,24 +290,11 @@ li > input[type=checkbox] {
   .toc {
     display: block !important;
     position: fixed !important;
-    right: calc(50% - 360px - 20px); /* 720px / 2 */
-    margin-right: 1.5rem;
+    left: calc(50% + 360px + 20px); /* right of 720px container */
     opacity: 0.2;
-    /* Opacity Transition */
-    -webkit-transition: opacity 1s ease-in-out;
-    -moz-transition: opacity 1s ease-in-out;
-    -ms-transition: opacity 1s ease-in-out;
-    -o-transition: opacity 1s ease-in-out;
-    transition: opacity 1s ease-in-out;
-    /* Margin Transition */
-    -webkit-transition: margin 1s ease-in-out;
-    -moz-transition: margin 1s ease-in-out;
-    -ms-transition: margin 1s ease-in-out;
-    -o-transition: margin 1s ease-in-out;
-    transition: margin 1s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
 
     &:hover {
-      margin-right: 2.3rem;
       opacity: 1;
     }
   }
@@ -321,28 +308,20 @@ li > input[type=checkbox] {
 
   .breadcrumb-item::before {
     display: none !important;
-    
   }
 }
 
 /* Viewport ≥ 992px: container = 960px */
 @media (min-width: 992px) {
   .toc {
-    right: calc(50% - 480px - 20px); /* 960px / 2 */
+    left: calc(50% + 480px + 20px); /* 960px / 2 */
   }
 }
 
-/* Viewport ≥ 1200px: container = 1140px */
+/* Viewport ≥ 1200px: container = 720px (locked) */
 @media (min-width: 1200px) {
   .toc {
-    right: calc(50% - 570px - 20px); /* 1140px / 2 */
-  }
-}
-
-/* Viewport ≥ 1400px: container = 1320px */
-@media (min-width: 1400px) {
-  .toc {
-    right: calc(50% - 660px - 20px); /* 1320px / 2 */
+    left: calc(50% + 360px + 20px); /* 720px / 2 */
   }
 }
 
@@ -430,4 +409,150 @@ hr {
 
 .svg-container figcaption {
   margin: 0.5rem 0 0 0;
+}
+
+.img-container {
+  border: dashed 3px color-mix(in srgb, var(--secondary) 50%, transparent);
+  padding: 1rem;
+}
+
+.img-container img {
+  display: block;
+  width: 100%;
+}
+
+.img-container figure {
+  margin: 0;
+}
+
+.img-container figcaption {
+  margin: 0.5rem 0 0 0;
+}
+
+.timeline-year {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-year aside {
+  font-family: 'Red Hat Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+  min-width: 2rem;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  border-left: 2px solid color-mix(in srgb, var(--secondary) 30%, transparent);
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+}
+
+.timeline-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.timeline-item {
+  flex: 0 1 calc(50% - 0.375rem);
+  border: 2px solid color-mix(in srgb, var(--secondary) 50%, transparent);
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.timeline-icons {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.timeline-icons a {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.timeline-icons a:hover {
+  opacity: 1;
+}
+
+.timeline-icons a::after {
+  content: none !important;
+}
+
+.icon-linkedin {
+  background: url('/LinkedIn.svg') center/contain no-repeat;
+}
+
+.icon-internet {
+  background: url('/globe.svg') center/contain no-repeat;
+}
+
+.icon-github {
+  background: url('/github.svg') center/contain no-repeat, white;
+  border-radius: 50%;
+}
+
+.timeline-item.span-2 {
+  flex: 0 1 100%;
+}
+
+.timeline-date {
+  font-family: 'Red Hat Mono', monospace;
+  font-size: 0.75rem;
+  opacity: 0.6;
+  align-self: flex-end;
+}
+
+.timeline-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.timeline-desc {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+  .timeline-year {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .timeline-year aside {
+    writing-mode: horizontal-tb;
+    transform: none;
+    text-align: left;
+    border-left: none;
+    border-bottom: 2px solid color-mix(in srgb, var(--secondary) 30%, transparent);
+    padding-left: 0;
+    padding-bottom: 0.5rem;
+  }
+  .timeline-item {
+    flex: 0 1 100%;
+  }
+}
+
+.shortcode-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.shortcode-grid .video-container,
+.shortcode-grid .svg-container,
+.shortcode-grid .img-container {
+  float: none !important;
+  margin: 0 !important;
+  flex-shrink: 0;
 }
