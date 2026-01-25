@@ -26,6 +26,9 @@ copyright = "from Ron0Studios"
           block = [['\[', '\]'], ['$$', '$$']]
           inline = [['\(', '\)']]
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
 
 [params]
 theme = "auto"
