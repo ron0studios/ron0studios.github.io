@@ -38,10 +38,10 @@ showPostsSummary = true
 
 # Giscus Comment System
 [params.giscus]
-repository = "username/repository"
-repositoryId = "repositoryId"
-categoryName = "categoryName"
-categoryId = "categoryId"
+repository = "ron0studios/ron0studios.github.io"
+repositoryId = "MDEwOlJlcG9zaXRvcnkzMzU1NDEyNzE="
+categoryName = "Announcements"
+categoryId = "DIC_kwDOE__0F84C2BHp"
 mapping = "pathname"
 theme = "preferred_color_scheme"
 language = "en"

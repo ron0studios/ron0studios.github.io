@@ -36,7 +36,28 @@
         document.body.classList.add('text-dark');
       }
       updateThemeIcon(theme);
+      updateGiscusTheme(theme);
     }
+
+    function updateGiscusTheme(theme) {
+      const giscusTheme = theme === 'dark' ? 'dark' : 'light';
+      const iframe = document.querySelector('iframe.giscus-frame');
+      if (iframe) {
+        iframe.contentWindow.postMessage(
+          { giscus: { setConfig: { theme: giscusTheme } } },
+          'https://giscus.app'
+        );
+      }
+    }
+
+    // sync giscus theme when iframe loads
+    window.addEventListener('message', (event) => {
+      if (event.origin !== 'https://giscus.app') return;
+      if (event.data && event.data.giscus) {
+        const theme = document.body.classList.contains('dark') ? 'dark' : 'light';
+        updateGiscusTheme(theme);
+      }
+    }, { once: true });
 
     function updateThemeIcon(theme) {
       const label = document.getElementById('theme-label');

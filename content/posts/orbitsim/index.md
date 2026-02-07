@@ -9,6 +9,7 @@ draft: false
 tags: ["c++", "scientific", "project", "cpu"]
 math: true
 toc: true
+comments: true
 summary: My implementation of the Barnes-Hut treecode algorithm for N-body gravity simulations. Capable of hosting up to 100k bodies on CPU devices.
 ---
 
