@@ -507,6 +507,11 @@ hr {
   flex: 0 1 100%;
 }
 
+.timeline-item.groq-nvidia {
+  border: 2px solid;
+  border-image: linear-gradient(135deg, orange, #0b0) 1;
+}
+
 .timeline-date {
   font-family: 'Red Hat Mono', monospace;
   font-size: 0.75rem;
