@@ -7,11 +7,16 @@
     {{ .Content }}
     {{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
     {{ range $paginator.Pages }}
-    <div class="row mb-3">
-      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-      {{ $dateHuman := .Date | time.Format ":date_long" }}
-      <time class="small" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
-      <h2 class="h5 list-post-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    <div class="row mb-3 post-row" data-pathname="{{ .RelPermalink }}">
+      <div class="d-flex justify-content-between align-items-start">
+        <div>
+          {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+          {{ $dateHuman := .Date | time.Format ":date_long" }}
+          <time class="small" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+          <h2 class="h5 list-post-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+        </div>
+        <span class="post-giscus-stats small" style="display:none;"></span>
+      </div>
       {{ if .Site.Params.showPostsSummary }}
       <p class="small opacity-75 post-summary">
         {{ .Summary }}
@@ -19,6 +24,32 @@
       {{ end }}
     </div>
     {{ end }}
+    <script>
+      fetch('https://api.github.com/repos/{{ .Site.Params.giscus.repository }}/discussions')
+        .then(r => r.json())
+        .then(discussions => {
+          document.querySelectorAll('.post-row').forEach(row => {
+            const pathname = row.dataset.pathname;
+            const disc = discussions.find(d =>
+              pathname.endsWith(d.title) || pathname.slice(1) === d.title
+            );
+            if (disc) {
+              const stats = row.querySelector('.post-giscus-stats');
+              const emojiMap = {'+1':'👍','-1':'👎'};
+              const parts = [];
+              for (const [key, emoji] of Object.entries(emojiMap)) {
+                if (disc.reactions[key] > 0) parts.push(emoji + ' ' + disc.reactions[key]);
+              }
+              if (disc.comments > 0) parts.push('💬 ' + disc.comments);
+              if (parts.length > 0) {
+                stats.textContent = parts.join('  ');
+                stats.style.display = '';
+              }
+            }
+          });
+        })
+        .catch(() => {});
+    </script>
     {{ $paginator := .Paginator }}
     {{ if gt $paginator.TotalPages 1 }}
     <nav aria-label="breadcrumb">
