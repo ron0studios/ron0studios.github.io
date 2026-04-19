@@ -11,15 +11,15 @@ Renders a menu for the given menu ID.
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav aria-label="breadcrumb" class="small navbar navbar-expand-lg">
-    <div class="collapse navbar-collapse mt-3 mt-md-0" id="collapsibleMenu">
-      <ol class="breadcrumb fw-bold">
+  <nav aria-label="breadcrumb" class="small navbar navbar-expand-lg align-items-start">
+    <div class="collapse navbar-collapse mt-3 mt-md-0 align-items-md-start" id="collapsibleMenu">
+      <ol class="breadcrumb fw-bold mb-0">
         {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
       </ol>
+      <button class="theme-toggler ms-md-auto mt-2 mt-md-0 align-self-md-start" type="button" aria-label="Toggle theme" onclick="toggleTheme()">
+          <span id="theme-label">light mode</span>
+      </button>
     </div>
-    <button class="theme-toggler" type="button" aria-label="Toggle theme" onclick="toggleTheme()">
-        <span id="theme-label">light mode</span>
-    </button>
   </nav>
 {{- end }}
 

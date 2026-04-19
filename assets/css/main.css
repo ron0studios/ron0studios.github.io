@@ -5,6 +5,112 @@ body {
   background-color: var(--bg-color) !important;
 }
 
+.home-hero-wrap {
+  position: relative;
+  width: 100%;
+  height: 8rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  pointer-events: none;
+  overflow: visible;
+}
+
+@media (max-width: 575.98px) {
+  .home-hero-wrap { height: 6rem; }
+}
+
+/* PCIe-style edge-contact fingers. The strip itself is short; the left and
+   right "end fingers" (pseudo-elements) extend down to touch the die top,
+   leaving a visible gap for the middle contacts. */
+.home-hero-pcie {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.5;
+  /* Iridescent sweep — same hue space as the die shader. */
+  background: linear-gradient(
+    90deg,
+    hsl(140, 38%, 60%) 0%,
+    hsl(205, 32%, 60%) 32%,
+    hsl(285, 38%, 60%) 66%,
+    hsl(340, 42%, 60%) 100%
+  );
+  /* Mask reveals three features:
+     1) bottom 1px line spanning the full die width (the hook)
+     2) top 1px substrate bar restricted to the menu range
+     3) 1px-wide fingers on a 3px pitch, restricted to the menu range */
+  mask-image:
+    linear-gradient(to bottom, transparent calc(100% - 1px), black calc(100% - 1px)),
+    linear-gradient(to bottom, black 0 1px, transparent 1px),
+    repeating-linear-gradient(to right, black 0 1px, transparent 1px 3px);
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent calc(100% - 1px), black calc(100% - 1px)),
+    linear-gradient(to bottom, black 0 1px, transparent 1px),
+    repeating-linear-gradient(to right, black 0 1px, transparent 1px 3px);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size:
+    100% 100%,
+    var(--menu-width, 100%) 100%,
+    var(--menu-width, 100%) 100%;
+  -webkit-mask-size:
+    100% 100%,
+    var(--menu-width, 100%) 100%,
+    var(--menu-width, 100%) 100%;
+  mask-position:
+    0 0,
+    var(--menu-offset-x, 0px) 0,
+    var(--menu-offset-x, 0px) 0;
+  -webkit-mask-position:
+    0 0,
+    var(--menu-offset-x, 0px) 0,
+    var(--menu-offset-x, 0px) 0;
+  mask-composite: add;
+  -webkit-mask-composite: source-over;
+}
+
+@media (max-width: 767.98px) {
+  /* Stacked menu on mobile — the effect doesn't make sense there. */
+  .home-hero-pcie { display: none; }
+}
+
+.home-hero {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.home-hero-title {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-align: center;
+  pointer-events: none;
+}
+
+.home-hero-title span {
+  display: inline-block;
+  padding: 0.5em 0.4em;
+  font-family: 'Red Hat Mono', monospace;
+  font-weight: 500;
+  font-size: clamp(1rem, 3.2vw, 1.9rem);
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+}
+
 body, main {
   height: 100%;
   font-family: 'Literata', serif !important;
@@ -464,6 +570,23 @@ hr {
   display: flex;
   flex-direction: column;
   position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.timeline-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.18;
+  pointer-events: none;
+  display: block;
+}
+
+.dark .timeline-bg {
+  opacity: 0.22;
 }
 
 .timeline-icons {

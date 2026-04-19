@@ -5,7 +5,15 @@
     <div class="row mt-5 pt-5">
         <div class="col-md-12">
             {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+            {{ if .IsHome }}
+            <div class="home-hero-wrap">
+                <div class="home-hero-pcie" aria-hidden="true"></div>
+                <canvas id="home-hero" class="home-hero" aria-hidden="true"></canvas>
+                <h1 class="home-hero-title"><span>{{ $title }}</span></h1>
+            </div>
+            {{ else }}
             <h1 class="display-3 text-uppercase lh-sm">{{ $title }}</h1>
+            {{ end }}
             {{ if isset .Params "lead" }}
             <p class="lead pb-2">
                 <span class="underline">{{ .Params.lead }}</span>
