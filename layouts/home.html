@@ -6,10 +6,10 @@
         <div class="col-md-12">
             {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
             {{ if .IsHome }}
-            <div class="home-hero-wrap">
-                <div class="home-hero-pcie" aria-hidden="true"></div>
-                <canvas id="home-hero" class="home-hero" aria-hidden="true"></canvas>
-                <h1 class="home-hero-title"><span>{{ $title }}</span></h1>
+            <div class="page-hero-wrap">
+                <div class="page-hero-pcie" aria-hidden="true"></div>
+                <canvas id="page-hero" class="page-hero" aria-hidden="true"></canvas>
+                <h1 class="page-hero-title chip-title"><span>{{ $title }}</span></h1>
             </div>
             {{ else }}
             <h1 class="display-3 text-uppercase lh-sm">{{ $title }}</h1>

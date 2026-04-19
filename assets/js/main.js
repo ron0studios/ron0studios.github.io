@@ -876,9 +876,9 @@ function createDie(canvas, opts = {}) {
 function init() {
   // Homepage top hero — fills the blank space above the menu/title.
   // Uses the same block scale as the timeline boxes for visual consistency.
-  const heroCanvas = document.getElementById('home-hero');
+  const heroCanvas = document.getElementById('page-hero');
   if (heroCanvas) {
-    const heroTitleSpan = document.querySelector('.home-hero-title span');
+    const heroTitleSpan = document.querySelector('.page-hero-title span');
     dies.push(createDie(heroCanvas, {
       labels: true, sealRing: true, wires: true,
       minBlockSize: 12, maxAreaFraction: 0.05,
@@ -888,8 +888,8 @@ function init() {
 
   // Align the PCIe edge-contact strip to sit above the hero, directly under
   // the menu breadcrumbs — matches their exact horizontal extent.
-  const heroPcie = document.querySelector('.home-hero-pcie');
-  const heroWrap = document.querySelector('.home-hero-wrap');
+  const heroPcie = document.querySelector('.page-hero-pcie');
+  const heroWrap = document.querySelector('.page-hero-wrap');
   if (heroPcie && heroWrap) {
     function alignHeroPcie() {
       const menu = heroWrap.parentElement && heroWrap.parentElement.querySelector('.breadcrumb');

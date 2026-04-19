@@ -5,7 +5,7 @@ body {
   background-color: var(--bg-color) !important;
 }
 
-.home-hero-wrap {
+.page-hero-wrap {
   position: relative;
   width: 100%;
   height: 8rem;
@@ -16,13 +16,13 @@ body {
 }
 
 @media (max-width: 575.98px) {
-  .home-hero-wrap { height: 6rem; }
+  .page-hero-wrap { height: 6rem; }
 }
 
 /* PCIe-style edge-contact fingers. The strip itself is short; the left and
    right "end fingers" (pseudo-elements) extend down to touch the die top,
    leaving a visible gap for the middle contacts. */
-.home-hero-pcie {
+.page-hero-pcie {
   position: absolute;
   z-index: 1;
   pointer-events: none;
@@ -71,10 +71,10 @@ body {
 
 @media (max-width: 767.98px) {
   /* Stacked menu on mobile — the effect doesn't make sense there. */
-  .home-hero-pcie { display: none; }
+  .page-hero-pcie { display: none; }
 }
 
-.home-hero {
+.page-hero {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -83,20 +83,13 @@ body {
   pointer-events: none;
 }
 
-.home-hero-title {
-  position: absolute;
-  inset: 0;
-  margin: 0;
-  padding: 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  text-align: center;
-  pointer-events: none;
+/* Shared chip-label title — matches the procedural die's on-canvas labels.
+   Used by the home hero, post page h1s, etc. */
+.chip-title {
+  margin: 0 0 0.75rem 0;
 }
 
-.home-hero-title span {
+.chip-title span {
   display: inline-block;
   padding: 0.5em 0.4em;
   font-family: 'Red Hat Mono', monospace;
@@ -105,10 +98,25 @@ body {
   letter-spacing: 0.08em;
   color: var(--primary);
   text-transform: uppercase;
-  white-space: nowrap;
-  line-height: 1;
+  line-height: 1.1;
   position: relative;
   z-index: 2;
+}
+
+.page-hero-title {
+  position: absolute;
+  inset: 0;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+.page-hero-title span {
+  white-space: nowrap;
+  line-height: 1;
 }
 
 body, main {
