@@ -1,9 +1,16 @@
 {{ define "main" }}
   <div class="container pt-5">
-    <!-- <h1>{{ .Title }}</h1> -->
     <div class="row mt-5 pt-5">
-      {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+      <div class="col-md-12">
+        {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+        <div class="page-hero-wrap">
+          <div class="page-hero-pcie" aria-hidden="true"></div>
+          <canvas id="page-hero" class="page-hero" aria-hidden="true"></canvas>
+          <h1 class="page-hero-title chip-title"><span>{{ .Title }}</span></h1>
+        </div>
+      </div>
     </div>
+    <hr>
     {{ .Content }}
     {{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
     {{ range $paginator.Pages }}
