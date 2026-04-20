@@ -75,7 +75,7 @@
 
     function initTheme() {
       const savedTheme = localStorage.getItem('theme');
-      const theme = savedTheme || getSystemTheme();
+      const theme = savedTheme || 'dark';
       applyTheme(theme);
     }
 

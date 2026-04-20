@@ -31,7 +31,7 @@ copyright = "from Ron0Studios"
     dir = ':cacheDir/images'
 
 [params]
-theme = "auto"
+theme = "dark"
 palette = "infeinermium"
 showThemeNotice = false
 showPostsSummary = true
