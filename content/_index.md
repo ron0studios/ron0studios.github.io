@@ -35,9 +35,9 @@ I am currently delving deeper into `HPC`, learning about more niche topics in __
     <aside>2026</aside>
     <div class="timeline-grid">
       <div class="timeline-item span-2 groq-nvidia">
-        <span class="timeline-date">Jan – May | Internship</span>
+        <span class="timeline-date">Jan – Oct | Internship</span>
         <span class="timeline-title"><span style="color:orange">Groq</span> <span style="color:#0b0">(now NVIDIA)</span></span>
-        <span class="timeline-desc">Distributed Systems + Inference Engineering</span>
+        <span class="timeline-desc">LPU Distributed Systems Software + Inference</span>
       </div>
     </div>
   </div>
