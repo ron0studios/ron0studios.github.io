@@ -3,11 +3,15 @@
     <div class="row mt-5 pt-5">
       <div class="col-md-12">
         {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+        {{ if .Param "plain_title" }}
+        <h1 class="plain-page-title">{{ .Title }}</h1>
+        {{ else }}
         <div class="page-hero-wrap">
           <div class="page-hero-pcie" aria-hidden="true"></div>
           <canvas id="page-hero" class="page-hero" aria-hidden="true"></canvas>
           <h1 class="page-hero-title chip-title"><span>{{ .Title }}</span></h1>
         </div>
+        {{ end }}
       </div>
     </div>
     <div class="post">
