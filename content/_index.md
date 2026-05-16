@@ -11,17 +11,15 @@ I am a self-taught engineer and student. I like `low-level`, `GPUs`, and novel `
 
 ---
 
-I got into programming as a kid who loved making games and speedy simulations. 
+I got into programming as a kid [who loved making games](https://ron0studios.itch.io/) and speedy simulations. 
 
 The common thread between all my projects is <span style="color:orangered">*performance*</span>. 
 
-After learning more about `GPUs` (specifically *GPGPU programming*), I discovered the second dimension of performance -- **latency** and __**throughput**__.
+After learning more about GPUs (specifically *GPGPU programming*), I discovered the second dimension of performance -- latency and *throughput*. I accessed **my first GPU** in *October 2024*, [**my first cluster**](https://www.bristol.ac.uk/research/centres/bristol-supercomputing/articles/2025/isc-student-cluster-competition.html) in *March 2025* and [**my first supercomputer**](https://www.fz-juelich.de/en/jsc/education/master-students/guest-student-programme) in *August 2025*. 
 
-> I accessed **my first GPU** in *October 2024*, [**my first cluster**](https://www.bristol.ac.uk/research/centres/bristol-supercomputing/articles/2025/isc-student-cluster-competition.html) in *March 2025* and [**my first supercomputer**](https://www.fz-juelich.de/en/jsc/education/master-students/guest-student-programme) in *August 2025*. 
+I'm scaling from performance on single-node programs to seeing how we can reliably scale work to utilise the bandwidth of **hundreds** of nodes. 
 
-I'm scaling from performance on single-node programs to seeing how we can reliably scale work to utilise the bandwidth of `hundreds` of nodes. 
-
-I am currently delving deeper into `HPC`, learning about more niche topics in __`CUDA`__, and working on entirely new compute with **<span style="color:orange">Groq</span>** ([now **<span style="color:#0b0">NVIDIA</span>**](https://groq.com/newsroom/groq-and-nvidia-enter-non-exclusive-inference-technology-licensing-agreement-to-accelerate-ai-inference-at-global-scale)).
+I am currently delving deeper into *computer architecture*, HPC, and working on entirely new compute with **<span class="nvidia-lpu-gradient">NVIDIA LPU</span>**.
 
 ---
 
@@ -36,7 +34,7 @@ I am currently delving deeper into `HPC`, learning about more niche topics in __
     <div class="timeline-grid">
       <div class="timeline-item span-2 groq-nvidia">
         <span class="timeline-date">Jan – Oct | Internship</span>
-        <span class="timeline-title"><span style="color:orange">Groq</span> <span style="color:#0b0">(now NVIDIA)</span></span>
+        <span class="timeline-title"><span class="nvidia-lpu-gradient">NVIDIA LPU</span></span>
         <span class="timeline-desc">LPU Distributed Systems Software + Inference</span>
       </div>
     </div>

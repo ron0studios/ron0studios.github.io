@@ -657,6 +657,14 @@ hr {
   border-image: linear-gradient(135deg, orange, #0b0) 1;
 }
 
+.nvidia-lpu-gradient {
+  color: orange;
+  background: linear-gradient(135deg, orange, #0b0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .timeline-date {
   font-family: 'Red Hat Mono', monospace;
   font-size: 0.75rem;
