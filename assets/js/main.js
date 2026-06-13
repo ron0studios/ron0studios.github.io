@@ -74,8 +74,8 @@ function makeShade(mouse, theme, iridescent) {
     const dy = y - mouse.y;
     const angle = Math.atan2(dy, dx);
     const dist = Math.hypot(dx, dy);
-    let hue = (angle * 180 / Math.PI + dist * 0.45 + 360) % 360;
-    const falloff = Math.max(0, 1 - dist / 450);
+    let hue = (angle * 180 / Math.PI + dist * 0.18 + 360) % 360;
+    const falloff = Math.max(0, 1 - dist / 1100);
     let sat, light;
     if (role === 'primary') {
       hue = (hue + 18) % 360;
