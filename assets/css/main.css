@@ -5,6 +5,19 @@ body {
   background-color: var(--bg-color) !important;
 }
 
+:root {
+  --content-max: 720px;
+  --content-half: 360px;
+  --content-gutter: clamp(1rem, 4vw, 2rem);
+}
+
+.container {
+  width: min(calc(100% - (2 * var(--content-gutter))), var(--content-max)) !important;
+  max-width: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .page-hero-wrap {
   position: relative;
   width: 100%;
@@ -67,11 +80,6 @@ body {
     var(--menu-offset-x, 0px) 0;
   mask-composite: add;
   -webkit-mask-composite: source-over;
-}
-
-@media (max-width: 767.98px) {
-  /* Stacked menu on mobile — the effect doesn't make sense there. */
-  .page-hero-pcie { display: none; }
 }
 
 .page-hero {
@@ -172,12 +180,6 @@ a {
 
 a:hover {
   color: var(--primary) !important;
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 720px !important;
-  }
 }
 
 table:not(.gist-data *) {
@@ -413,12 +415,12 @@ li > input[type=checkbox] {
   font-family: 'Red Hat Mono', serif !important;
 }
 
-/* Viewport ≥ 768px: container = 720px */
-@media (min-width: 768px) {
+/* Float the TOC only once there is enough side space beside the 720px column. */
+@media (min-width: 1180px) {
   .toc {
     display: block !important;
     position: fixed !important;
-    left: calc(50% + 360px + 20px); /* right of 720px container */
+    left: calc(50% + var(--content-half) + 20px);
     opacity: 0.2;
     transition: opacity 0.3s ease-in-out;
 
@@ -428,7 +430,7 @@ li > input[type=checkbox] {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .breadcrumb {
     flex-direction: column !important;
     --bs-breadcrumb-item-padding-x: 0rem !important;
@@ -439,18 +441,19 @@ li > input[type=checkbox] {
   }
 }
 
-/* Viewport ≥ 992px: container = 960px */
-@media (min-width: 992px) {
-  .toc {
-    left: calc(50% + 480px + 20px); /* 960px / 2 */
-  }
+.site-menu .site-menu-list {
+  flex: 0 0 auto;
+  flex-direction: row !important;
+  flex-wrap: nowrap;
+  --bs-breadcrumb-item-padding-x: 0.5rem;
 }
 
-/* Viewport ≥ 1200px: container = 720px (locked) */
-@media (min-width: 1200px) {
-  .toc {
-    left: calc(50% + 360px + 20px); /* 720px / 2 */
-  }
+.site-menu .breadcrumb-item::before {
+  display: inline-block !important;
+}
+
+.site-menu .theme-toggler {
+  flex: 0 0 auto;
 }
 
 #TableOfContents > ul {
