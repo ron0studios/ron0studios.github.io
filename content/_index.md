@@ -32,6 +32,11 @@ I am currently delving deeper into *computer architecture*, HPC, and working on 
   <div class="timeline-year">
     <aside>2026</aside>
     <div class="timeline-grid">
+      <div class="timeline-item span-2 fractile">
+        <span class="timeline-date">Oct - Present | MTS</span>
+        <span class="timeline-title"><span class="fractile-logo" role="img" aria-label="Fractile"></span></span>
+        <span class="timeline-desc">Systems Software + Kernel</span>
+      </div>
       <div class="timeline-item span-2 groq-nvidia">
         <span class="timeline-date">Jan – Oct | Internship</span>
         <span class="timeline-title"><span class="nvidia-lpu-gradient">NVIDIA LPU</span></span>
@@ -71,7 +76,7 @@ I am currently delving deeper into *computer architecture*, HPC, and working on 
         </span>
         <span class="timeline-date">Aug – Oct | Research Internship</span>
         <span class="timeline-title">Jülich Supercomputing Centre</span>
-        <span class="timeline-desc">Distributing/Load balancing FMM <span style="opacity:50%">(github coming soon!)</span></span>
+        <span class="timeline-desc">Distributing/Load balancing FMM</span>
       </div>
       <div class="timeline-item">
         <span class="timeline-icons">
